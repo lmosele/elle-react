@@ -33,7 +33,8 @@ const TabColumn = styled(Col)`
 
 const TabViewWrapper = styled(Row)`
   border: 1px solid black;
-  padding: 1em;
+  padding: 15px;
+  margin-bottom: 60px;
 `;
 
 const TopCommentsRow = styled(Row)`
@@ -41,7 +42,7 @@ const TopCommentsRow = styled(Row)`
 `;
 
 const SearchBar = styled.input`
-  padding: 5px;
+  padding-left: 10px;
   border-radius: 4px;
   height: 30px;
 `;
@@ -62,10 +63,10 @@ const CommentsHeader = styled.h3`
   font-size: 1.5em;
 `;
 
+// The comments container is responsible for passing state to the commentform and rendering the state of existing comments
 export class CommentsContainer extends React.Component<any, any> {
 
   public createCommentList() {
-    console.log(this.props.comments);
     let commentItems;
 
     if (this.props.comments.length > 0) {
@@ -85,12 +86,6 @@ export class CommentsContainer extends React.Component<any, any> {
     return commentItems;
   }
 
-  public submitHandler(e: any) {
-    e.preventDefault();
-    console.log(e.target.valye);
-    this.props.dispatch(actions.addComment(e));
-  }
-
   public render() {
     const commentList = this.createCommentList();
     const numberOfComments = this.props.comments.length;
@@ -98,19 +93,19 @@ export class CommentsContainer extends React.Component<any, any> {
       <>
         <CommentsHeader>Comments ({numberOfComments})</CommentsHeader>
         <CommentTabsContainer between='sm'>
-          <TabColumn sm={6}>
+          <TabColumn xs={6}>
             <FakeTab>Comments ({numberOfComments})</FakeTab>
           </TabColumn>
-          <TabColumn sm={6}>
+          <TabColumn xs={6}>
             <FakeTab>Private Notes (0)</FakeTab>
           </TabColumn>
         </CommentTabsContainer>
         <TabViewWrapper>
           <TopCommentsRow between='sm'>
-            <Col sm={8}>
-              <SearchBar placeholder='search' type='text'/>
+            <Col xs={8}>
+              <SearchBar placeholder='Search' type='text'/>
             </Col>
-            <Col sm={4}>
+            <Col xs={4}>
               <Row end='sm'>
                 <SelectFilter>
                   <option value='newest'>Newest</option>

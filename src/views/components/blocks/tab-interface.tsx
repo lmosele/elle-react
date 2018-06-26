@@ -34,13 +34,13 @@ export default class TabInterface extends React.Component<any, any> {
     return (
       <Wrapper>
         <TabsContainer between='sm'>
-          <TabColumn sm={4}>
+          <TabColumn xs={4}>
             <Tab to='/about'>About</Tab>
           </TabColumn>
-          <TabColumn sm={4}>
+          <TabColumn xs={4}>
             <Tab to='/plan'>Activity Plan</Tab>
           </TabColumn>
-          <TabColumn sm={4}>
+          <TabColumn xs={4}>
             <Tab to='/examples'>Examples</Tab>
           </TabColumn>
         </TabsContainer>

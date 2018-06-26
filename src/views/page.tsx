@@ -15,11 +15,11 @@ export default class Page extends React.Component<any, any> {
         <Header/>
         <Grid>
           <Row>
-            <Col sm={8}>
+            <Col xs={12} sm={9}>
               <TabInterface/>
               <CommentsContainer/>
             </Col>
-            <Col sm={3}>aside</Col>
+            <Col xs={12} sm={3}>aside</Col>
           </Row>
         </Grid>
       </>

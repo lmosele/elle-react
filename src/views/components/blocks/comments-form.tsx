@@ -1,18 +1,26 @@
 import * as React from 'react';
 
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { IStyledProps } from '../../../types/theme-types';
-import { ICommentItem } from '../elements/comment-item';
+
+const BaseInput = css`
+  padding: 10px;
+  margin-top: 5px;
+`;
 
 const AddCommentInput = styled.textarea`
+  ${BaseInput}
   resize: none;
   width: 100%;
+  margin-bottom: 10px;
 `;
 const AddNameInput = styled.input`
+  ${BaseInput}
   width: 100%;
 `;
 const AddSchoolInput = styled.input`
+  ${BaseInput}
   width: 100%;
 `;
 const AddCommentButton = styled.button`
@@ -24,6 +32,7 @@ const AddCommentButton = styled.button`
   float: right;
 `;
 
+// We handle the submission of new comments via this component
 export default class CommentForm extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
@@ -65,16 +74,20 @@ export default class CommentForm extends React.Component<any, any> {
     return (
       <form onSubmit={this.submitHandler}>
         <AddNameInput
+          id='comment'
+          placeholder='Full Name'
           type='text'
           value={this.state.nameValue}
           onChange={this.handleNameChange}
         />
         <AddSchoolInput
+          placeholder='School Name'
           type='text'
           value={this.state.schoolValue}
           onChange={this.handleSchoolChange}
         />
         <AddCommentInput
+          placeholder='Comment'
           value={this.state.contentValue}
           onChange={this.handleContentChange}
         />

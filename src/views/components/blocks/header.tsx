@@ -6,7 +6,7 @@ import { Row, Col, FullWidth, Grid } from '../layout';
 import ShareWidget from './share-widget';
 
 const HeaderWrapper = styled(FullWidth)`
-  background-color: ${(props: IStyledProps) => props.theme.colors.gray};
+  background-color: ${(props: IStyledProps) => props.theme.colors.darkGray};
   height: 400px;
   padding-left:30px;
   padding-right:30px;
@@ -17,7 +17,7 @@ const HeaderContainment = styled(Row)`
 `;
 const ResourcesBox = styled.div`
   background-color: white;
-  border: 1px solid ${(props: IStyledProps) => props.theme.colors.lighterGray};
+  border: 1px solid ${(props: IStyledProps) => props.theme.colors.lightGray};
   padding: 20px;
   max-width: 360px;
   margin-top: 40px;
@@ -30,7 +30,7 @@ const FullColumn = styled(Col)`
   height: 100%;
 `;
 const Heading = styled.h1`
-  color: white;
+  color: ${(props: IStyledProps) => props.theme.colors.lighterGray};
   margin: 0;
   margin-top: 40px;
 `;
@@ -40,13 +40,13 @@ export default class Header extends React.Component<any, any> {
     return (
       <HeaderWrapper middle='sm'>
         <HeaderContainment>
-            <FullColumn sm={7}>
+            <FullColumn xs={12} md={7}>
               <Heading>Hanging Hashtags</Heading>
               <p>Building Background</p>
               <p>Demonstrations and Experiences</p>
               <ShareWidget/>
             </FullColumn>
-            <FullColumn sm={5}>
+            <FullColumn xs={false} md={5}>
               <ResourcesBox>
                 <h2>Resources</h2>
                 <ResourcesList>

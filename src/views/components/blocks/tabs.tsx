@@ -10,18 +10,18 @@ const TabContent = styled(Row)`
 
 export const AboutTab = ({ }) => (
   <TabContent>
-    <Col sm={8}>lorem</Col>
-    <Col sm={4}>foo</Col>
+    <Col xs={8}>lorem</Col>
+    <Col xs={4}>foo</Col>
   </TabContent>
 );
 export const PlanTab = ({ }) => (
   <TabContent>
-    <Col sm={12}>activities</Col>
+    <Col xs={12}>activities</Col>
   </TabContent>
 );
 export const ExampleTab = ({ }) => (
   <TabContent>
-    <Col sm={12}>examples</Col>
+    <Col xs={12}>examples</Col>
   </TabContent>
 );
 

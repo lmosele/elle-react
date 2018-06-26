@@ -45,10 +45,10 @@ export default class CommentItem extends React.Component<ICommentItem, any> {
     return (
       <CommentItemWrapper>
         <Row>
-          <Col sm={1}>
+          <Col xs={1}>
             <Avatar/>
           </Col>
-          <Col sm={11}>
+          <Col xs={11}>
             <div>
               <Name>{this.props.name}</Name>
               <School>({this.props.school})</School>

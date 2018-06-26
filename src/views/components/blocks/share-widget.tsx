@@ -9,7 +9,7 @@ import Ratings from '../elements/ratings';
 const get = require('lodash/get');
 
 const ShareContainer = styled.div`
-  max-width: 360px;
+  max-width: 480px;
   margin-top: 100px;
 `;
 const ShareWidgetWrapper = styled(Row)`
@@ -17,22 +17,37 @@ const ShareWidgetWrapper = styled(Row)`
 `;
 
 const Button = styled.button`
+  color: white;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0px;
   background-color: ${(props: IStyledProps) => props.theme.colors.lightGray};
   border: 2px solid ${(props: IStyledProps) => props.theme.colors.lightGray};
-  height: 30px;
-  padding: 5px;
+  height: 40px;
+  padding: 10px;
+`;
+
+const ButtonAsLink = styled.a`
+  color: white;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0px;
+  background-color: ${(props: IStyledProps) => props.theme.colors.lightGray};
+  border: 1px solid ${(props: IStyledProps) => props.theme.colors.lightGray};
+  height: 40px;
+  padding: 10px 9px 9px 10px;
+  text-decoration: none;
 `;
 
 const ButtonWindow = styled.span`
+  color: ${(props: IStyledProps) => props.theme.colors.lightGray};
   display: inline-block;
   border-radius: 0;
   border: 2px solid ${(props: IStyledProps) => props.theme.colors.lightGray};
-  height: 30px;
-  padding: 5px;
+  height: 40px;
+  padding: 10px;
 `;
 
 const ActionButtonContainer = styled.div`
@@ -40,9 +55,9 @@ const ActionButtonContainer = styled.div`
     > ${Button},
     > ${ButtonWindow} {
       cursor: pointer;
-      color: ${(props: IStyledProps) => props.theme.colors.lighterGray}
-      border-color: ${(props: IStyledProps) => props.theme.colors.darkerGray};
-      background-color: ${(props: IStyledProps) => props.theme.colors.darkerGray};
+      color: ${(props: IStyledProps) => props.theme.colors.darkerGray}
+      border-color: ${(props: IStyledProps) => props.theme.colors.lightGray};
+      background-color: ${(props: IStyledProps) => props.theme.colors.lightGray};
     }
   }
 `;
@@ -73,19 +88,19 @@ export class ShareWidget extends React.Component<any, IShareState> {
       <ShareContainer>
         <Ratings/>
         <ShareWidgetWrapper>
-          <Col sm={4}>
+          <Col xs={4}>
             <ActionButtonContainer>
               <Button onClick={this.handleSaveClick}>Save</Button><ButtonWindow>{this.state.saves}</ButtonWindow>
             </ActionButtonContainer>
           </Col>
-          <Col sm={4}>
+          <Col xs={4}>
             <ActionButtonContainer>
               <Button onClick={this.handleShareClick}>Share</Button><ButtonWindow>{this.state.shares}</ButtonWindow>
             </ActionButtonContainer>
           </Col>
-          <Col sm={4}>
+          <Col xs={4}>
             <ActionButtonContainer>
-              <Button>Comment</Button><ButtonWindow>{0}</ButtonWindow>
+              <ButtonAsLink href='#comment'>Comment</ButtonAsLink><ButtonWindow>{0}</ButtonWindow>
             </ActionButtonContainer>
           </Col>
         </ShareWidgetWrapper>
