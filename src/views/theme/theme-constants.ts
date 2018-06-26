@@ -22,7 +22,11 @@ const theme: IthemeInterface = {
     },
   },
   colors: {
-    panelColor: 'darkgray',
+    gray: '#787878',
+    lightGray: `#D3D3D3`,
+    lighterGray: '#F5F5F5',
+    darkGray: '#696969',
+    darkerGray: '#202020',
   },
 };
 

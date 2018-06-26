@@ -19,7 +19,11 @@ export interface IthemeInterface {
     };
   };
   colors?: {
-    panelColor: string,
+    gray: string,
+    lightGray: string,
+    lighterGray: string,
+    darkGray: string,
+    darkerGray: string,
   };
 }
 

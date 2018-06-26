@@ -1,12 +1,24 @@
 import * as constants from './constants';
 
 export interface IReducer {
-  comments: any;
+  comments: IComments[];
   shares: number;
 }
 
-const initialState = {
-  comments: '',
+export interface IComments {
+  name: string;
+  content: string;
+  school: string;
+}
+
+const initialState: IReducer = {
+  comments: [
+    {
+      name: 'Sara Forrestier',
+      school: 'Everett Public Schools',
+      content: 'I really love this idea',
+    },
+  ],
   shares: 0,
 };
 

@@ -6,7 +6,7 @@ import { Row, Col, FullWidth, Grid } from '../layout';
 import ShareWidget from './share-widget';
 
 const HeaderWrapper = styled(FullWidth)`
-  background-color: ${(props: IStyledProps) => props.theme.colors.panelColor};
+  background-color: ${(props: IStyledProps) => props.theme.colors.gray};
   height: 400px;
   padding-left:30px;
   padding-right:30px;
@@ -17,6 +17,7 @@ const HeaderContainment = styled(Row)`
 `;
 const ResourcesBox = styled.div`
   background-color: white;
+  border: 1px solid ${(props: IStyledProps) => props.theme.colors.lighterGray};
   padding: 20px;
   max-width: 360px;
   margin-top: 40px;

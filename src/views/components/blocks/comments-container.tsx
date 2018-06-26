@@ -3,6 +3,12 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import { Row, Col } from '../layout';
+import { connect } from 'react-redux';
+import { IComments } from '../../../state/page/reducers';
+import CommentItem from '../elements/comment-item';
+import { IStyledProps } from '../../../types/theme-types';
+
+const get = require('lodash/get');
 
 const CommentTabsContainer = styled(Row)`
   margin-top: 30px;
@@ -38,19 +44,61 @@ const SearchBar = styled.input`
 `;
 const SelectFilter = styled.select`
   border-radius: 4px;
-  background-color: gray;
+  background-color: ${(props: IStyledProps) => props.theme.colors.gray};
   color: white;
   height: 30px;
   min-width: 150px;
 `;
+const CommentsList = styled.ul`
+  margin: 0;
+  margin-top: 20px;
+  list-style: none;
+  width: 100%;
+`;
+const CommentsHeader = styled.h3`
+  font-size: 1.5em;
+`;
 
-export default class CommentsContainer extends React.Component<any, any> {
+const AddCommentButton = styled.button`
+  color: ${(props: IStyledProps) => props.theme.colors.lighterGray};
+  background-color: ${(props: IStyledProps) => props.theme.colors.gray};
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+`;
+
+export class CommentsContainer extends React.Component<any, any> {
+
+  public createCommentList() {
+    let commentItems;
+
+    if (this.props.comments.length > 0) {
+      commentItems = this.props.comments.map((comment: IComments, i: any) => {
+        return (
+          <CommentItem
+            key={i}
+            school={comment.school}
+            name={comment.name}
+            content={comment.content}
+          />
+        );
+      });
+    } else {
+      commentItems = 'No Comments Yet!';
+    }
+    return commentItems;
+  }
+
   public render() {
+    const commentList = this.createCommentList();
+    const numberOfComments = this.props.comments.length;
     return (
       <>
+        <CommentsHeader>Comments ({numberOfComments})</CommentsHeader>
+        <AddCommentButton>Add New Comment</AddCommentButton>
         <CommentTabsContainer between='sm'>
           <TabColumn sm={6}>
-            <FakeTab>Comments (1)</FakeTab>
+            <FakeTab>Comments ({numberOfComments})</FakeTab>
           </TabColumn>
           <TabColumn sm={6}>
             <FakeTab>Private Notes (0)</FakeTab>
@@ -70,8 +118,21 @@ export default class CommentsContainer extends React.Component<any, any> {
               </Row>
             </Col>
           </TopCommentsRow>
+          <CommentsList>
+            {commentList}
+          </CommentsList>
         </TabViewWrapper>
       </>
     );
   }
 }
+
+const mapStateToProps = (state: any) => ({
+  comments: get(state, 'pageState.comments'),
+});
+
+const mapDispatchToProps = {
+  // requestHasProducts: ,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommentsContainer);

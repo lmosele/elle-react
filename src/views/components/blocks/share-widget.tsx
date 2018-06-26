@@ -21,8 +21,8 @@ const Button = styled.button`
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0px;
-  background-color: lightblue;
-  border: 2px solid lightblue;
+  background-color: ${(props: IStyledProps) => props.theme.colors.lightGray};
+  border: 2px solid ${(props: IStyledProps) => props.theme.colors.lightGray};
   height: 30px;
   padding: 5px;
 `;
@@ -30,7 +30,7 @@ const Button = styled.button`
 const ButtonWindow = styled.span`
   display: inline-block;
   border-radius: 0;
-  border: 2px solid lightblue;
+  border: 2px solid ${(props: IStyledProps) => props.theme.colors.lightGray};
   height: 30px;
   padding: 5px;
 `;
@@ -40,8 +40,9 @@ const ActionButtonContainer = styled.div`
     > ${Button},
     > ${ButtonWindow} {
       cursor: pointer;
-      border-color: lightgray;
-      background-color: lightgray;
+      color: ${(props: IStyledProps) => props.theme.colors.lighterGray}
+      border-color: ${(props: IStyledProps) => props.theme.colors.darkerGray};
+      background-color: ${(props: IStyledProps) => props.theme.colors.darkerGray};
     }
   }
 `;

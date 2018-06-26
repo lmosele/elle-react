@@ -8,9 +8,11 @@ import { Row, Col } from '../layout';
 
 const NavTab = require('react-router-tabs').NavTab;
 
-const TabsContainer = styled(Row)`
+const Wrapper = styled.div`
+  margin-bottom: 50px;
   margin-top: 30px;
 `;
+const TabsContainer = styled(Row)``;
 const Tab = styled(NavTab)`
   display: block;
   width: 100%;
@@ -30,7 +32,7 @@ const TabColumn = styled(Col)`
 export default class TabInterface extends React.Component<any, any> {
   public render() {
     return (
-      <>
+      <Wrapper>
         <TabsContainer between='sm'>
           <TabColumn sm={4}>
             <Tab to='/about'>About</Tab>
@@ -50,7 +52,7 @@ export default class TabInterface extends React.Component<any, any> {
             <Route path='/examples' component={ExampleTab} />
           </Switch>
         </TabViewContainer>
-      </>
+      </Wrapper>
     );
   }
 }
