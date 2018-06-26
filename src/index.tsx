@@ -29,6 +29,7 @@ export default class Root extends React.Component {
     bootstrapApp();
   }
   public render() {
+    console.log(store.getState());
     return (
       <BrowserRouter>
         <ThemeProvider theme={theme}>
