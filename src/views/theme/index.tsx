@@ -8,7 +8,7 @@ const baseStyles = css`
  * {
     box-sizing: border-box;
     font-family: 'Lato', 'Verdana', 'sans-serif';
-    color:  ${theme.colors.textColor};
+    color: black;
     &:before, &:after {
       box-sizing: border-box;
     }

@@ -18,7 +18,9 @@ export interface IthemeInterface {
       lg: number;
     };
   };
-  colors?: any;
+  colors?: {
+    panelColor: string,
+  };
 }
 
 // This allows me to access the theme object from any component without making typescript hate me

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 import configureStore from './state/store';
 
@@ -29,11 +30,13 @@ export default class Root extends React.Component {
   }
   public render() {
     return (
-      <ThemeProvider theme={theme}>
-        <Provider store={store}>
-          <Page/>
-        </Provider>
-      </ThemeProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <Provider store={store}>
+            <Page/>
+          </Provider>
+        </ThemeProvider>
+      </BrowserRouter>
     );
   }
 }

@@ -13,10 +13,12 @@
     "react-a11y": "^1.0.0",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
-    "redux-thunk": "^2.2.0",
-    "redux": "^4.0.0",
-    "react-styled-flexboxgrid": "^2.2.0",
+    "react-router-dom": "^4.3.1",
     "react-router-redux": "^5.0.0-alpha.9",
+    "react-router-tabs": "^1.2.0",
+    "react-styled-flexboxgrid": "^2.2.0",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0",
     "styled-components": "^3.3.3"
   },
   "devDependencies": {

@@ -22,22 +22,7 @@ const theme: IthemeInterface = {
     },
   },
   colors: {
-    bgColor: '#',
-    containerBgColor: '#',
-    accentColor: '#',
-    accentColorHover: '#',
-    primaryColor: '#',
-    primaryColorActive: '#',
-    secondaryColor: '#',
-    secondaryColorActive: '#',
-    errorColor: '#',
-    errorColorHover: '#',
-    successColor: '#',
-    successColorHover: '#',
-    warningColor: '#',
-    warningColorHover: '#',
-    textColor: '#',
-    invertTextColor: '#',
+    panelColor: 'darkgray',
   },
 };
 
