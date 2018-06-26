@@ -4,6 +4,8 @@ import styled, { css } from 'styled-components';
 
 import { IStyledProps } from '../../../types/theme-types';
 
+import { Comment as CommentIcon } from 'styled-icons/fa-regular';
+
 const BaseInput = css`
   padding: 10px;
   margin-top: 5px;
@@ -30,6 +32,14 @@ const AddCommentButton = styled.button`
   border-radius: 4px;
   padding: 8px;
   float: right;
+`;
+const AddCommentButtonIcon = CommentIcon.extend`
+  color: ${(props: IStyledProps) => props.theme.colors.lighterGray};
+  width: 20px;
+  margin-right: 15px;
+  path {
+    color: white;
+  }
 `;
 
 // We handle the submission of new comments via this component
@@ -91,7 +101,10 @@ export default class CommentForm extends React.Component<any, any> {
           value={this.state.contentValue}
           onChange={this.handleContentChange}
         />
-        <AddCommentButton type='submit' value='Submit'>Add Comment</AddCommentButton>
+        <AddCommentButton type='submit' value='Submit'>
+          <AddCommentButtonIcon color='white' />
+          Add Comment
+        </AddCommentButton>
       </form>
     );
   }

@@ -10,6 +10,7 @@ import { IStyledProps } from '../../../types/theme-types';
 import { Row, Col } from '../layout';
 import CommentItem from '../elements/comment-item';
 import CommentForm from './comments-form';
+import { Search } from 'styled-icons/fa-solid';
 
 const get = require('lodash/get');
 
@@ -42,10 +43,26 @@ const TopCommentsRow = styled(Row)`
 `;
 
 const SearchBar = styled.input`
-  padding-left: 10px;
   border-radius: 4px;
   height: 30px;
+  border: 0;
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  /* flex: 1; */
 `;
+
+const SearchIcon = Search.extend`
+  width: 30px;
+  padding: 0.5rem;
+`;
+
+const SearchContainer = styled.div`
+  max-width: 300px;
+  flex: 1 1 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+`;
+
 const SelectFilter = styled.select`
   border-radius: 4px;
   background-color: ${(props: IStyledProps) => props.theme.colors.gray};
@@ -55,6 +72,7 @@ const SelectFilter = styled.select`
 `;
 const CommentsList = styled.ul`
   margin: 0;
+  padding: 0;
   margin-top: 20px;
   list-style: none;
   width: 100%;
@@ -63,7 +81,8 @@ const CommentsHeader = styled.h3`
   font-size: 1.5em;
 `;
 
-// The comments container is responsible for passing state to the commentform and rendering the state of existing comments
+// The comments container is responsible for
+// passing state to the commentform and rendering the state of existing comments
 export class CommentsContainer extends React.Component<any, any> {
 
   public createCommentList() {
@@ -103,7 +122,10 @@ export class CommentsContainer extends React.Component<any, any> {
         <TabViewWrapper>
           <TopCommentsRow between='sm'>
             <Col xs={8}>
-              <SearchBar placeholder='Search' type='text'/>
+              <SearchContainer>
+                <SearchIcon />
+                <SearchBar name='search' placeholder='Search...' />
+              </SearchContainer>
             </Col>
             <Col xs={4}>
               <Row end='sm'>
