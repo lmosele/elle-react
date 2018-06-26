@@ -1,3 +1,4 @@
+// Types for our global theme object
 export interface IthemeInterface {
   flexboxgrid: {
     gridSize: number;
@@ -20,6 +21,7 @@ export interface IthemeInterface {
   colors?: any;
 }
 
+// This allows me to access the theme object from any component without making typescript hate me
 export interface IStyledProps {
   theme?: IthemeInterface;
 }

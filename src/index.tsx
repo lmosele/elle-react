@@ -9,13 +9,16 @@ import Page from './views/Page';
 import { injectGlobal, ThemeProvider } from 'styled-components';
 import theme, { baseStyles, normalize } from './views/theme';
 
+// Initializes global styles
 export const mergeGlobalStyles = injectGlobal`
   ${normalize}
   ${baseStyles}
 `;
 
+// Triggers state creation
 const store = configureStore();
 
+// Nothing for now!
 const bootstrapApp = async () => {
   console.log('booted!!');
 };
