@@ -46,11 +46,27 @@ const ActionButtonContainer = styled.div`
   }
 `;
 
-export interface IShareProps {
+export interface IShareState {
   shares: number;
+  saves: number;
 }
 
-export class ShareWidget extends React.Component<IShareProps, {}> {
+export class ShareWidget extends React.Component<any, IShareState> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      shares: 0,
+      saves: 0,
+    };
+  }
+
+  public handleShareClick = (evt: any) => {
+    this.setState({ shares: this.state.shares + 1 });
+  }
+  public handleSaveClick = (evt: any) => {
+    this.setState({ saves: this.state.saves + 1 });
+  }
+
   public render() {
     return (
       <ShareContainer>
@@ -58,12 +74,12 @@ export class ShareWidget extends React.Component<IShareProps, {}> {
         <ShareWidgetWrapper>
           <Col sm={4}>
             <ActionButtonContainer>
-              <Button>Save</Button><ButtonWindow>{0}</ButtonWindow>
+              <Button onClick={this.handleSaveClick}>Save</Button><ButtonWindow>{this.state.saves}</ButtonWindow>
             </ActionButtonContainer>
           </Col>
           <Col sm={4}>
             <ActionButtonContainer>
-              <Button>Share</Button><ButtonWindow>{this.props.shares}</ButtonWindow>
+              <Button onClick={this.handleShareClick}>Share</Button><ButtonWindow>{this.state.shares}</ButtonWindow>
             </ActionButtonContainer>
           </Col>
           <Col sm={4}>

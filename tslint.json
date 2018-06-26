@@ -11,6 +11,7 @@
     "no-var-requires": false,
     "ordered-imports": false,
     "quotemark": [true, "single", "avoid-escape"],
+    "object-literal-sort-keys": false,
     "no-console": {
       "severity": "warning",
       "options": [
