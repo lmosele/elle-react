@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import configureStore from './state/store';
 
-// import Page from './views/Page';
+import Page from './views/Page';
 
 import { injectGlobal, ThemeProvider } from 'styled-components';
 import theme, { baseStyles, normalize } from './views/theme';
@@ -28,8 +28,7 @@ export default class Root extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <Provider store={store}>
-          {/* <App /> */}
-          foo
+          <Page/>
         </Provider>
       </ThemeProvider>
     );
