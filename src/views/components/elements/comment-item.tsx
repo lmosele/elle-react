@@ -22,6 +22,17 @@ const Time = styled.span`
   color: ${(props: IStyledProps) => props.theme.colors.gray};
   font-size: .8em;
 `;
+const Content = styled.p`
+  margin-left: 15px;
+`;
+const Avatar = styled.div`
+  margin-top: 20px;
+  background-color: ${(props: IStyledProps) => props.theme.colors.lightGray};
+  border: 1px solid ${(props: IStyledProps) => props.theme.colors.gray};
+  height: 40px;
+  width: 40px;
+  border-radius: 90px;
+`;
 
 export interface ICommentItem {
   school: string;
@@ -34,14 +45,16 @@ export default class CommentItem extends React.Component<ICommentItem, any> {
     return (
       <CommentItemWrapper>
         <Row>
-          <Col sm={1}>avatar</Col>
+          <Col sm={1}>
+            <Avatar/>
+          </Col>
           <Col sm={11}>
             <div>
               <Name>{this.props.name}</Name>
               <School>({this.props.school})</School>
               <Time>Now</Time>
             </div>
-            <p>{this.props.content}</p>
+            <Content>{this.props.content}</Content>
           </Col>
         </Row>
       </CommentItemWrapper>

@@ -2,11 +2,14 @@ import * as React from 'react';
 
 import styled from 'styled-components';
 
-import { Row, Col } from '../layout';
 import { connect } from 'react-redux';
 import { IComments } from '../../../state/page/reducers';
-import CommentItem from '../elements/comment-item';
+import * as actions from '../../../state/page/actions';
 import { IStyledProps } from '../../../types/theme-types';
+
+import { Row, Col } from '../layout';
+import CommentItem from '../elements/comment-item';
+import CommentForm from './comments-form';
 
 const get = require('lodash/get');
 
@@ -59,17 +62,10 @@ const CommentsHeader = styled.h3`
   font-size: 1.5em;
 `;
 
-const AddCommentButton = styled.button`
-  color: ${(props: IStyledProps) => props.theme.colors.lighterGray};
-  background-color: ${(props: IStyledProps) => props.theme.colors.gray};
-  border: none;
-  border-radius: 4px;
-  padding: 8px;
-`;
-
 export class CommentsContainer extends React.Component<any, any> {
 
   public createCommentList() {
+    console.log(this.props.comments);
     let commentItems;
 
     if (this.props.comments.length > 0) {
@@ -89,13 +85,18 @@ export class CommentsContainer extends React.Component<any, any> {
     return commentItems;
   }
 
+  public submitHandler(e: any) {
+    e.preventDefault();
+    console.log(e.target.valye);
+    this.props.dispatch(actions.addComment(e));
+  }
+
   public render() {
     const commentList = this.createCommentList();
     const numberOfComments = this.props.comments.length;
     return (
       <>
         <CommentsHeader>Comments ({numberOfComments})</CommentsHeader>
-        <AddCommentButton>Add New Comment</AddCommentButton>
         <CommentTabsContainer between='sm'>
           <TabColumn sm={6}>
             <FakeTab>Comments ({numberOfComments})</FakeTab>
@@ -120,6 +121,8 @@ export class CommentsContainer extends React.Component<any, any> {
           </TopCommentsRow>
           <CommentsList>
             {commentList}
+            <hr/>
+            <CommentForm callBack={this.props.addComment}/>
           </CommentsList>
         </TabViewWrapper>
       </>
@@ -132,7 +135,7 @@ const mapStateToProps = (state: any) => ({
 });
 
 const mapDispatchToProps = {
-  // requestHasProducts: ,
+  addComment: actions.addComment,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentsContainer);

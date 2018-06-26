@@ -25,7 +25,8 @@ const initialState: IReducer = {
 export default function pageReducer(state: IReducer = initialState, action: any) {
   switch (action.type) {
     case constants.ADD_COMMENT:
-      return Object.assign({}, state, { comments: action.payload });
+      const newArray = state.comments.concat(action.payload);
+      return Object.assign({}, state, { comments: newArray });
     default:
       return state;
   }
