@@ -1,0 +1,33 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+      "tslint:latest",
+      "tslint-react"
+  ],
+  "jsRules": {},
+  "rules": {
+    "prefer-object-spread": false,
+    "curly": true,
+    "no-var-requires": false,
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "case-insensitive",
+        "named-imports-order": "case-insensitive"
+      }
+    ],
+    "quotemark": [true, "single", "avoid-escape"],
+    "no-console": {
+      "severity": "warning",
+      "options": [
+        "debug",
+        "info",
+        "log",
+        "time",
+        "timeEnd",
+        "trace"
+      ]
+    }
+  },
+  "rulesDirectory": []
+}
