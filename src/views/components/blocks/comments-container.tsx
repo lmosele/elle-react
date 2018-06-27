@@ -5,10 +5,10 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { IComments } from '../../../state/page/reducers';
 import * as actions from '../../../state/page/actions';
-import { IStyledProps } from '../../../types/theme-types';
 
 import { Row, Col } from '../layout';
 import CommentItem from '../elements/comment-item';
+import { SelectInput } from '../elements/select-input';
 import CommentForm from './comments-form';
 import { Search } from 'styled-icons/fa-solid';
 
@@ -63,13 +63,6 @@ const SearchContainer = styled.div`
   overflow: hidden;
 `;
 
-const SelectFilter = styled.select`
-  border-radius: 4px;
-  background-color: ${(props: IStyledProps) => props.theme.colors.gray};
-  color: white;
-  height: 30px;
-  min-width: 150px;
-`;
 const CommentsList = styled.ul`
   margin: 0;
   padding: 0;
@@ -129,10 +122,10 @@ export class CommentsContainer extends React.Component<any, any> {
             </Col>
             <Col xs={4}>
               <Row end='sm'>
-                <SelectFilter>
+                <SelectInput>
                   <option value='newest'>Newest</option>
                   <option value='oldest'>Oldest</option>
-                </SelectFilter>
+                </SelectInput>
               </Row>
             </Col>
           </TopCommentsRow>

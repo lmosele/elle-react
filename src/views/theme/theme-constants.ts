@@ -6,7 +6,7 @@ const theme: IthemeInterface = {
   flexboxgrid: {
     // Defaults
     gridSize: 12, // rem
-    gutterWidth: 1, // rem
+    gutterWidth: 3, // rem
     outerMargin: 1, // rem
     mediaQuery: 'only screen',
     container: {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from '../layout';
-import { IStyledProps } from '../../../types/theme-types';
+import { ITheme } from '../../../types/theme-types';
 
 const CommentItemWrapper = styled.li`
  padding: 20px;
@@ -19,7 +19,7 @@ const School = styled.span`
   text-transform: capitalize;
 `;
 const Time = styled.span`
-  color: ${(props: IStyledProps) => props.theme.colors.gray};
+  color: ${(props: ITheme) => props.theme.colors.gray};
   font-size: .8em;
 `;
 const Content = styled.p`
@@ -27,8 +27,8 @@ const Content = styled.p`
 `;
 const Avatar = styled.div`
   margin-top: 20px;
-  background-color: ${(props: IStyledProps) => props.theme.colors.lightGray};
-  border: 1px solid ${(props: IStyledProps) => props.theme.colors.gray};
+  background-color: ${(props: ITheme) => props.theme.colors.lightGray};
+  border: 1px solid ${(props: ITheme) => props.theme.colors.gray};
   height: 40px;
   width: 40px;
   border-radius: 90px;

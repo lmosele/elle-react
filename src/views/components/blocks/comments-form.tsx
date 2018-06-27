@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import styled, { css } from 'styled-components';
 
-import { IStyledProps } from '../../../types/theme-types';
+import { ITheme } from '../../../types/theme-types';
 
 import { Comment as CommentIcon } from 'styled-icons/fa-regular';
 
@@ -26,15 +26,15 @@ const AddSchoolInput = styled.input`
   width: 100%;
 `;
 const AddCommentButton = styled.button`
-  color: ${(props: IStyledProps) => props.theme.colors.lighterGray};
-  background-color: ${(props: IStyledProps) => props.theme.colors.gray};
+  color: ${(props: ITheme) => props.theme.colors.lighterGray};
+  background-color: ${(props: ITheme) => props.theme.colors.gray};
   border: none;
   border-radius: 4px;
   padding: 8px;
   float: right;
 `;
 const AddCommentButtonIcon = CommentIcon.extend`
-  color: ${(props: IStyledProps) => props.theme.colors.lighterGray};
+  color: ${(props: ITheme) => props.theme.colors.lighterGray};
   width: 20px;
   margin-right: 15px;
   path {

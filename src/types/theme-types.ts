@@ -28,6 +28,6 @@ export interface IthemeInterface {
 }
 
 // This allows me to access the theme object from any component without making typescript hate me
-export interface IStyledProps {
+export interface ITheme {
   theme?: IthemeInterface;
 }

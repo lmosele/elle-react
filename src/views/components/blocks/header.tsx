@@ -1,23 +1,23 @@
 import * as React from 'react';
 
 import styled from 'styled-components';
-import { IStyledProps } from '../../../types/theme-types';
+import { ITheme } from '../../../types/theme-types';
 import { Row, Col, FullWidth, Grid } from '../layout';
 import ShareWidget from './share-widget';
 
 const HeaderWrapper = styled(FullWidth)`
-  background-color: ${(props: IStyledProps) => props.theme.colors.darkGray};
+  background-color: ${(props: ITheme) => props.theme.colors.darkGray};
   height: 400px;
   padding-left:30px;
   padding-right:30px;
 `;
 const HeaderContainment = styled(Row)`
-  max-width: ${(props: IStyledProps) => props.theme.flexboxgrid.container.lg}em;
+  max-width: ${(props: ITheme) => props.theme.flexboxgrid.container.lg}em;
   margin: 0 auto;
 `;
 const ResourcesBox = styled.div`
   background-color: white;
-  border: 1px solid ${(props: IStyledProps) => props.theme.colors.lightGray};
+  border: 1px solid ${(props: ITheme) => props.theme.colors.lightGray};
   padding: 20px;
   max-width: 360px;
   margin-top: 50px;
@@ -30,7 +30,7 @@ const FullColumn = styled(Col)`
   height: 100%;
 `;
 const Heading = styled.h1`
-  color: ${(props: IStyledProps) => props.theme.colors.lighterGray};
+  color: ${(props: ITheme) => props.theme.colors.lighterGray};
   margin: 0;
   font-size: 2.5em;
   font-weight: 400;

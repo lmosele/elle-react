@@ -4,6 +4,7 @@ import { FullWidth, Grid, Row, Col } from './components/layout';
 import Header from './components/blocks/header';
 import TabInterface from './components/blocks/tab-interface';
 import CommentsContainer from './components/blocks/comments-container';
+import SideBar from './components/blocks/sideBar';
 
 // import SideBar from './side-bar';
 
@@ -15,11 +16,13 @@ export default class Page extends React.Component<any, any> {
         <Header/>
         <Grid>
           <Row>
-            <Col xs={12} sm={9}>
+            <Col xs={12} sm={12} md={7} lg={8}>
               <TabInterface/>
               <CommentsContainer/>
             </Col>
-            <Col xs={12} sm={3}>aside</Col>
+            <Col xs={12} sm={12} md={5} lg={4}>
+              <SideBar />
+            </Col>
           </Row>
         </Grid>
         <div id='modal-root' />
