@@ -7,4 +7,5 @@ export const SelectInput = styled.select`
   color: white;
   height: 30px;
   min-width: 150px;
+  margin-right: 10px;
 `;

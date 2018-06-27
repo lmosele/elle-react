@@ -46,7 +46,7 @@ export default class TabInterface extends React.Component<any, any> {
         </TabsContainer>
         <TabViewContainer>
           <Switch>
-            <Route exact={true} path='/' />
+            <Route exact={true} path='/' render={() => <Redirect from='/' to='/about'/>}/>
             <Route path='/about' component={AboutTab} />
             <Route path='/plan' component={PlanTab} />
             <Route path='/examples' component={ExampleTab} />

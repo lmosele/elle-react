@@ -29,6 +29,7 @@ const Button = styled.button`
   height: 40px;
   padding: 10px;
   @media only screen and (max-width: ${(props: ITheme) => props.theme.flexboxgrid.breakpoints.md}rem) {
+    margin-top: 5px;
     width: 100%;
     border-radius: 0;
   }
@@ -46,6 +47,7 @@ const ButtonAsLink = styled.a`
   padding: 10px 9px 9px 10px;
   text-decoration: none;
   @media only screen and (max-width: ${(props: ITheme) => props.theme.flexboxgrid.breakpoints.md}rem) {
+    margin-top: 5px;
     text-align: center;
     display: block;
     width: 100%;
@@ -124,7 +126,7 @@ export class ShareWidget extends React.Component<{}, IShareState> {
       <ShareContainer>
         <Ratings/>
         <ShareWidgetWrapper>
-          <Col xs={4}>
+          <Col xs={12} sm={4}>
             <ActionButtonContainer>
               <Button onClick={this.handleSaveClick}>
                 <IconSave size='16'/>
@@ -133,7 +135,7 @@ export class ShareWidget extends React.Component<{}, IShareState> {
               <ButtonWindow>{this.state.saves}</ButtonWindow>
             </ActionButtonContainer>
           </Col>
-          <Col xs={4}>
+          <Col xs={12} sm={4}>
             <ActionButtonContainer>
               <Button onClick={this.handleShareClick}>
                 <IconShare size='16' />
@@ -142,7 +144,7 @@ export class ShareWidget extends React.Component<{}, IShareState> {
               <ButtonWindow>{this.state.shares}</ButtonWindow>
             </ActionButtonContainer>
           </Col>
-          <Col xs={4}>
+          <Col xs={12} sm={4}>
             <ActionButtonContainer>
               <ButtonAsLink href='#comment'>
                 <IconComment size='16' />
