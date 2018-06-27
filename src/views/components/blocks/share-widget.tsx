@@ -24,8 +24,8 @@ const Button = styled.button`
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0px;
-  background-color: ${(props: ITheme) => props.theme.colors.lightGray};
-  border: 2px solid ${(props: ITheme) => props.theme.colors.lightGray};
+  background-color: ${(props: ITheme) => props.theme.colors.gray};
+  border: 2px solid ${(props: ITheme) => props.theme.colors.gray};
   height: 40px;
   padding: 10px;
   @media only screen and (max-width: ${(props: ITheme) => props.theme.flexboxgrid.breakpoints.md}rem) {
@@ -40,8 +40,8 @@ const ButtonAsLink = styled.a`
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0px;
-  background-color: ${(props: ITheme) => props.theme.colors.lightGray};
-  border: 1px solid ${(props: ITheme) => props.theme.colors.lightGray};
+  background-color: ${(props: ITheme) => props.theme.colors.gray};
+  border: 1px solid ${(props: ITheme) => props.theme.colors.gray};
   height: 40px;
   padding: 10px 9px 9px 10px;
   text-decoration: none;
@@ -57,7 +57,7 @@ const ButtonWindow = styled.span`
   color: ${(props: ITheme) => props.theme.colors.lightGray};
   display: inline-block;
   border-radius: 0;
-  border: 2px solid ${(props: ITheme) => props.theme.colors.lightGray};
+  border: 2px solid ${(props: ITheme) => props.theme.colors.gray};
   height: 40px;
   padding: 10px;
   @media only screen and (max-width: ${(props: ITheme) => props.theme.flexboxgrid.breakpoints.md}rem) {

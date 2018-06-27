@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { ITheme } from '../../../types/theme-types';
 
 const Star = styled.svg`
   height: 30px;
@@ -17,6 +18,7 @@ const StarContainer = styled.div`
   display: inline-block;
 `;
 const ReviewSpan = styled.span`
+  color: ${(props: ITheme) => props.theme.colors.lightGray};
   font-size: .8em;
 `;
 
