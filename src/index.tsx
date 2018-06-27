@@ -9,11 +9,13 @@ import Page from './views/Page';
 
 import { injectGlobal, ThemeProvider } from 'styled-components';
 import theme, { baseStyles, normalize } from './views/theme';
+import { Select } from './views/components/elements/select';
 
 // Initializes global styles
 export const mergeGlobalStyles = injectGlobal`
   ${normalize}
   ${baseStyles}
+  ${Select}
 `;
 
 // Triggers state creation

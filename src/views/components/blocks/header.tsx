@@ -20,7 +20,7 @@ const ResourcesBox = styled.div`
   border: 1px solid ${(props: IStyledProps) => props.theme.colors.lightGray};
   padding: 20px;
   max-width: 360px;
-  margin-top: 40px;
+  margin-top: 50px;
 `;
 const ResourcesList = styled.ul`
   background-color: white;
@@ -32,7 +32,10 @@ const FullColumn = styled(Col)`
 const Heading = styled.h1`
   color: ${(props: IStyledProps) => props.theme.colors.lighterGray};
   margin: 0;
-  margin-top: 40px;
+  font-size: 2.5em;
+  font-weight: 400;
+  margin-top: 50px;
+  letter-spacing: .03em;
 `;
 
 export default class Header extends React.Component<any, any> {

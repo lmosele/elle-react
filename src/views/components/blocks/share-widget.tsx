@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import { IStyledProps } from '../../../types/theme-types';
 import { Row, Col } from '../layout';
 import Ratings from '../elements/ratings';
+import { appendModal, destroyModal } from '../elements/modal';
+import { actions } from '../../../state/page';
 
 const get = require('lodash/get');
 
@@ -67,7 +69,7 @@ export interface IShareState {
   saves: number;
 }
 
-export class ShareWidget extends React.Component<any, IShareState> {
+export class ShareWidget extends React.Component<{}, IShareState> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -77,8 +79,10 @@ export class ShareWidget extends React.Component<any, IShareState> {
   }
 
   public handleShareClick = (evt: any) => {
+    appendModal();
     this.setState({ shares: this.state.shares + 1 });
   }
+
   public handleSaveClick = (evt: any) => {
     this.setState({ saves: this.state.saves + 1 });
   }
@@ -111,10 +115,7 @@ export class ShareWidget extends React.Component<any, IShareState> {
 
 const mapStateToProps = (state: any) => ({
   shares: get(state, 'pageState.shares'),
+  saves: get(state, 'pageState.saves'),
 });
 
-const mapDispatchToProps = {
-  // requestHasProducts: ,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ShareWidget);
+export default connect(mapStateToProps, {})(ShareWidget);

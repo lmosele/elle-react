@@ -22,6 +22,7 @@ export default class Page extends React.Component<any, any> {
             <Col xs={12} sm={3}>aside</Col>
           </Row>
         </Grid>
+        <div id='modal-root' />
       </>
     );
   }

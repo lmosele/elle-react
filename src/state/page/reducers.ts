@@ -3,6 +3,7 @@ import * as constants from './constants';
 export interface IReducer {
   comments: IComments[];
   shares: number;
+  saves: number;
 }
 
 export interface IComments {
@@ -20,6 +21,7 @@ const initialState: IReducer = {
     },
   ],
   shares: 0,
+  saves: 0,
 };
 
 export default function pageReducer(state: IReducer = initialState, action: any) {
