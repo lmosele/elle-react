@@ -13,18 +13,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.ejs',
       inject: true,
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-        'API_URL': JSON.stringify('titan'), // this will come from either s3 or vault config
-        'memberSentryVersion': JSON.stringify('3.24.0'), // this will come from either s3 or vault config
-      }
-    }),
+    })
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 4666,
+    port: 3030,
   },
 };
