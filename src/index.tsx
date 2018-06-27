@@ -21,17 +21,8 @@ export const mergeGlobalStyles = injectGlobal`
 // Triggers state creation
 const store = configureStore();
 
-// Nothing for now!
-const bootstrapApp = async () => {
-  console.log('booted!!');
-};
-
 export default class Root extends React.Component {
-  public componentDidMount() {
-    bootstrapApp();
-  }
   public render() {
-    console.log(store.getState());
     return (
       <BrowserRouter>
         <ThemeProvider theme={theme}>

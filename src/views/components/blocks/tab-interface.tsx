@@ -28,7 +28,6 @@ const TabColumn = styled(Col)`
   padding: 0;
 `;
 
-// render={() => <Redirect from='/' to='/about' />}
 export default class TabInterface extends React.Component<any, any> {
   public render() {
     return (

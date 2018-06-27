@@ -42,7 +42,7 @@ const AddCommentButtonIcon = CommentIcon.extend`
   }
 `;
 
-// We handle the submission of new comments via this component
+// Handle the submission of new comments via this component
 export default class CommentForm extends React.Component<any, any> {
   constructor(props: any) {
     super(props);

@@ -1,14 +1,12 @@
 import * as React from 'react';
 
-import { FullWidth, Grid, Row, Col } from './components/layout';
+import { Grid, Row, Col } from './components/layout';
 import Header from './components/blocks/header';
 import TabInterface from './components/blocks/tab-interface';
 import CommentsContainer from './components/blocks/comments-container';
 import SideBar from './components/blocks/sideBar';
 
-// import SideBar from './side-bar';
-
-// This is where we create the main layout for the view "Page"
+// This is where I create the main layout for the view "Page"
 export default class Page extends React.Component<any, any> {
   public render() {
     return (
