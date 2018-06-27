@@ -78,6 +78,7 @@ const NestedRow = styled(Row)`
   padding: 0;
 `;
 const NestedRowDark = NestedRow.extend`
+  padding: 20px;
   background-color: ${(props: ITheme) => props.theme.colors.lighterGray};
 `;
 
@@ -142,6 +143,8 @@ export const ExampleTab = ({ }) => (
 
     <NestedRow>
       <Col sm={12}>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
       </Col>
     </NestedRow>

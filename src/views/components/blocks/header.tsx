@@ -11,6 +11,9 @@ const HeaderWrapper = styled(FullWidth)`
   height: 400px;
   padding-left:30px;
   padding-right:30px;
+  @media only screen and (max-width: ${(props: ITheme) => props.theme.flexboxgrid.breakpoints.sm}rem) {
+    min-height: 600px;
+  }
 `;
 const HeaderContainment = styled(Row)`
   max-width: ${(props: ITheme) => props.theme.flexboxgrid.container.lg}em;
